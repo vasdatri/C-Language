@@ -1,0 +1,84 @@
+#include <stdio.h>
+void swap_with_temp(int a,int b);
+void swap_method2(int a,int b);
+void swap_method3(int a,int b);
+void swap_method4(int a,int b);
+void swap_method5(int a,int b);
+int main()
+{
+    int x,y,z;
+    printf("enter x,y, values:\n");
+    scanf("%d %d",&x,&y);
+    printf("x=%d\ny=%d\n",x,y);
+    printf("swapping with temp variable:\n");
+    swap_with_temp(x,y);
+    printf("swapping with out temp & using +/-:\n");
+    swap_method2(x,y);
+    printf("swapping using * and / :\n");
+    swap_method3(x,y);
+    printf("swapping using ^ operator :\n");
+    swap_method4(x,y);
+    printf("swapping in a single line:\n");
+    swap_method5(x,y);
+    return 0;
+}
+void swap_with_temp(int a,int b)
+{
+  int temp;
+  temp=a;
+  a=b;
+  b=temp;
+  printf("x=%d\ny=%d\n",a,b);
+}
+void swap_method2(int a,int b)
+{
+   a=a+b;
+   b=a-b;
+   a=a-b;
+   printf("x=%d\ny=%d\n",a,b);
+}
+void swap_method3(int a,int b)
+{
+   a=a*b;
+   b=a/b;
+   a=a/b;
+   printf("x=%d\ny=%d\n",a,b);
+}
+void swap_method4(int a,int b)
+{
+   a=a^b;
+   b=a^b;
+   a=a^b;
+   printf("x=%d\ny=%d\n",a,b);
+}
+void swap_method5(int a,int b)
+{
+   a=b-a+(b=a);
+   printf("x=%d\ny=%d\n",a,b);
+}
+
+
+
+
+
+output:
+enter x,y, values:
+20
+40
+x=20
+y=40
+swapping with temp variable:
+x=40
+y=20
+swapping with out temp & using +/-:
+x=40
+y=20
+swapping using * and / :
+x=40
+y=20
+swapping using ^ operator :
+x=40
+y=20
+swapping in a single line:
+x=40
+y=20
